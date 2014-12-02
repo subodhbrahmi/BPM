@@ -1,0 +1,199 @@
+*{
+font-family:arial, helvetica, sans-serif;
+font-size:12px
+
+}
+body,div{
+margin:0;
+padding:0;
+}
+.headerLayout{
+width:100%;
+/*background-color:#0066FF;*/
+height:90px;
+margin-bottom:5px;
+}
+.headerLayout #title{
+font-size:16px;
+}
+.middleLayout{
+position:relative;
+border:0px solid red;
+background-color:white;
+min-height:100px;
+}
+.middleLeftLayout{
+float:left;
+width:15%;
+border:0px solid red;
+margin-top:10px;
+}
+.middleRightLayout{
+border:0px solid green;
+float:right;
+width:85%;
+margin-top:10px;
+}
+
+.footerLayout{
+width:100%;
+/*background-color:#FF6600 ;*/
+/*background-color:#eee;*/
+vertical-align:middle;
+text-align:center;
+margin-top:480px;
+}
+.attlogo{
+position:absolute;
+width:40px;
+height:40px;
+background-color:#CCCCCC;
+margin:10px;
+}
+.footerLayout #footer{
+position:relative;
+
+/*background-color:#FFFFFF */;
+text-align:center;
+/*border:2px solid #eee;*/
+/*border:2px solid #FF6600*/;
+
+}
+.image {
+	position:relative;
+	width: 100%;
+}
+.image .projectText {
+    position:absolute;    
+	left : 200px;
+	top : 0px;
+	text-align :right;
+    width:350px;
+	color: #FFF;
+}
+.image .welcomeText {
+    position:absolute;    
+	right :10px;
+	top : 0px;
+	text-align :right;
+    width:350px;
+	color: #FFF;
+	font-size:12px;
+}
+
+.dropdown-container{
+   clear:both;
+    min-height:50px;
+	width:100%;
+		
+}
+.dropdown-content{
+    float:left;
+    border: 0px solid #ccc;
+    width: 18%;
+    border-radius: 3px;
+    overflow: hidden;
+	margin:2px;
+   
+}
+select{
+width:100%;
+}
+.record{
+background-color:#FFFFFF;
+width:100%;
+}
+.record th{
+text-align:left;
+font-weight:bold;
+background-color:#CCCCCC
+}
+.record td{
+text-align:left;
+}
+.record .even{
+background-color:white;
+}
+.record .odd{
+background-color:#eee;
+}
+label{
+color:black;
+font-weight:bold;
+}
+.menuPanel{
+width:100%;
+margin-top:5px;
+}
+.menuPanel th{
+background-image:url(/iWMP/iWMP/images/bgcolor.png);color:#FFFFFF;
+height:20px;
+}
+.menuPanel td{
+height:20px;
+}
+.menuPanel .odd{
+background-color:#faf6ea;
+}
+.menuPanel .even{
+background-color:white;
+}
+a{
+text-decoration:none;
+}
+/* CSS Text Size*/ 
+ 
+ /*a
+ {
+    /* position:absolute *
+    font-size:12px;
+}
+
+a:hover 
+{
+    color:#0033CC;
+    font-size:13px;
+}*/
+/* CSS #900  hover #FFF BG Color #FF0*/ 
+.btnExample {  
+   color: #0000FF;
+   background: #ADD8E6;
+   font-weight: bold; 
+  border: 1px solid #0000FF;
+ }  
+ .btnExample:hover
+ {   color: #FFF;  
+ background:#0000FF;
+ } 
+ 
+ 
+#menu_list
+{
+    width:859px;
+    cursor:pointer;
+    }
+#menu_l
+{
+    width:120px;
+    height:10px;
+    display:inline-block;
+    margin: 0px 0px 0px 0px;
+   /* border:1px solid #616261; 
+    -webkit-border-radius: 3px; 
+    -moz-border-radius: 3px;
+    border-radius: 3px;*/
+    font-family:sans-serif, arial, helvetica; 
+    padding: 0px 0px 0px 0px; 
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+    font-weight:bold; 
+    /*text-align: center; */
+    }
+
+.record  { border-collapse:collapse; border-left:1px solid #bbb; border-top:1px solid #bbb;}
+.record th { background:#ccc; }
+.record td, .record th { border-right:1px solid #bbb;  border-bottom:1px solid #bbb; padding:4px; }
+.record tr:nth-child(2n-1) td { background:#add8e6; }
+
+
+
+

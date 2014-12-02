@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd"> 
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7" />
+<title>iWMP Tool</title>
+<link rel="stylesheet" type="text/css" href="../../Assets/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../../Assets/css/sameDayHomePage.css" />
+<script src="../../Assets/libs/jquery-1.11.0.min.js"></script>
+<script src="../../Assets/libs/jquery-ui.min.js"></script>
+<script src="../../Assets/libs/angular.min.js"></script>
+<script type="text/javascript" src="../../Assets/js/sameDayHomePage.js"></script>
+ <script type="text/javascript" src="../../App/common/header/sameDayHeader.html"></script>
+<script src="sameDayTool.js"></script>
+
+</head>
+
+<body ng-app="SameDayToolApp">
+<!--start Header Part-->
+<div ng-include="'../../App/common/header/sameDayHeader.html'" ></div>
+<!--end Header Part-->
+<!--start Middle Part-->
+<div class="middleLayout">
+<div ng-include="'../../App/common/header/sameDayLeftMenu.html'" ></div>
+<!--<div app-left-menu></div>-->
+
+<div class="middleRightLayout" ng-controller="FetchRecordCtrl">
+<!--<form method="POST" action=""  id="myForm" name="myform" onsubmit="return OnSubmitForm();">-->
+<table width="900px" border="0" align="center">
+  	<tr>
+      <td>&nbsp;</td>    
+    </tr>
+     <tr>
+     
+       <td align="right" style="font-style:italic; "><label><a href="email_alert.htm" onclick="return pop_email_alert('email_alert.htm')">Sign-up For Same Day Scheduled Reports</a></label></td>
+     
+    </tr>
+	<tr>
+      <td>&nbsp;</td>    
+    </tr>
+	
+	
+	<tr><td><table width="100%"><tr><td><label>Choose Same Day Action:</label>&nbsp;
+	      <select name="s_d_skill_add" Id="selectBox" onchange="changeFunc();" style="width:200px">
+					<option value="s_d_sameday_skill" selected > Same Day Skill Add</option>
+					<option value="s_d_schedule_change">Same Day Schedule Change</option>
+					<option value="s_d_inc_overtime">Same Day Incremental Overtime</option>
+					
+		 </select></td><td align="right"></td></tr>
+		 
+		 </table></td></tr>
+	<tr>
+      <td></td>    
+    </tr>
+	<tr>
+      <td>&nbsp;</td>    
+    </tr>
+	
+	<tr>
+      <td><table style="border:1px solid gray;width:100%">
+	  <tr><td><b>Search</b></td></tr>
+	  <tr><td>
+	  <tr>
+      <td>
+	  <table border="0" width="100%">
+	  <tr>
+	  <td> <input type="radio" name="ATTId" value="bulk_add">ATTUD(s) / Last Name:  <input type="text"  width="100" ng-model="attuid1"></td>
+	  <td align="right"><input type="checkbox" name="msoc_view" align="right">Switch to MSOC view</td>
+	  </tr>
+	  
+	<tr>
+      <td> <input type="radio" name="ATTId" value="bulk_add">Bulk Add:</td>    <td align="right">&nbsp;</td>
+    </tr>
+	  
+	  </table>
+	  
+		</td>    
+    </tr>
+	<tr>
+	  </td></tr>
+	  <tr><td><div class="dropdown-container">
+				<div class="dropdown-content">
+				    <span>Region:</span><br>
+					<select name="region">
+					<option value="select" selected>Select Region</option>
+					 <option value="A">MW</option>
+					 
+					
+					</select>
+				</div>
+				<div class="dropdown-content"><span>AOI:</span><br>
+				<select id="selectAOI" name="selectAOI" ng-model="mAOI" ng-change="selectAOI()" >
+					<option value="0">Select AOI</option>
+					<option ng-repeat="aoi in strAOIRet" value="{{ aoi.label }}" title="{{ aoi.label}}">{{ aoi.label }}</option>	
+				  </select>
+				</div>
+				<div class="dropdown-content"><span>AG:</span><br>
+				<select id="selectAG" name="selectAG" ng-model="mAG" ng-change="selectAG()">
+					<option value="0">Select AG</option>
+					<option ng-repeat="ag in strAGRet" value="{{ ag.label }}" title="{{ ag.label}}">{{ ag.label }}</option>	
+				  </select>
+				 </div> 
+		  <div class="dropdown-content"><span>Center:</span><br>
+			<select name="center"  id="center"  ng-model="mCenter" ng-change="selectCenter()">
+				<option value="0" selected>Select Center</option>
+				<option ng-repeat="center in strCenterRet" value="{{ center.label }}" title="{{ center.label}}">{{ center.label }}</option>		
+		    </select>
+		  </div>
+				<div class="dropdown-content"><span>Group:</span><br>
+				<select id="selectGroup" name="selectGroup" ng-model="mGroup" ng-change="selectGroup()">
+					<option value="0" >Select Group</option>
+					<option ng-repeat="grp in strGroupsRet" value="{{ grp.label }}" title="{{ grp.label}}" >{{ grp.label }}</option>
+				  </select>			
+			   </div>	
+               </td>
+			</tr>
+			<tr>
+      <td><div align="left"><a href="#" >			   
+			   <button class="btnExample" type="Retreive" value="Retreive" ng-click="retreiveCommomDetails();">RETREIVE</button> </a>
+				</div>	
+			</div></td> </tr>
+	  </table>
+    <tr> <td>&nbsp;</td></tr>	  
+	   
+	  </td>    
+    </tr>
+ <tr>
+       </tr>
+	
+	<tr>
+       <td style="display:none;" class="record"  id="record1" ng-show="!visible"> <label> 
+	  <table class="record">
+				<tr>
+				<th width="44">ATTUID</th>
+				<th width="81">Current Schedule</th>
+				<th width="39">Region</th>
+				<th width="28">AOI</th>
+				<th width="31">AG</th>
+				<th width="38">Center</th>
+				<th width="43">Group ID</th>
+				<th width="81">Schedule Change</th>
+				<th width="43">Over Time</th>
+				<th width="39">Skills</th>
+				
+				<tr id="rowdata" ng-repeat="s in dataValues">
+				   <td id="{{value.value.$t}}" ng-repeat="value in s">
+				      {{value.value.$t}}  
+				   </td>
+				   <td ng-bind-html-unsafe="row_html"></td>
+				     <td ng-bind-html-unsafe="row_html1"></td>
+					  <td ng-bind-html-unsafe="row_html2"></td>
+				</tr>
+				</table>
+				<table>
+				<tr>			
+      <td><div style="display:none" id="MyControlName"  >
+	  <br></br>
+	  <label>Select Same Day Schedule Action/Path:</label>&nbsp;<select name="s_d_sechedule_action" style="width:200px" id="s_d_sechedule_action">
+					<option value="add_nonprod_time" selected>Add Non-Prod Time</option>
+					<option value="s_d_on">Turn Tech ON</option>
+					<option value="s_d_off">Turn Tech OFF</option>
+					<option value="s_d_tech_profile">Adjust Tech Profile</option>					
+		 </select>	</div></td>    
+    </tr>
+	<tr><td>&nbsp;</tr></td>
+				<tr><td colspan="7"> <input type="submit" value="PROCEED" name="submit" class="retrieve_bttn" ng-click="submitDetails();"></td></tr>
+				</table>
+				</table>
+				</td></tr>
+	<tr>
+      <td>&nbsp;</td>    
+    </tr>
+	
+	
+	<tr>
+      <td>&nbsp;</td>    
+    </tr>
+	
+  </table>
+  <!--</form>-->
+</div>
+  
+</div>
+<!--end Middle Part-->
+<div ng-include="'../../App/common/header/sameDayFooter.html'" ></div>
+<!--end Footer Part-->
+</table>
+  <script language="javascript" type="text/javascript">
+<!--
+function pop_email_alert(url) {
+	newwindow=window.open(url,'name',"toolbar=yes, scrollbars=yes, resizable=yes, width=900, height=400");
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+
+// -->
+</script>
+</body>
+<script language="JavaScript"> 
+  var count=0;
+  var toggleVisibility=function(){ 
+  //alert("function")
+  if(count%2==0){
+  //alert(count)
+  document.getElementById("hideTD").style.display = "block"; 
+  }else{
+  document.getElementById("hideTD").style.display = "none";  
+ }
+			count++
+        } ;
+
+  var selectBox=0;		
+ function changeFunc() {
+    var selectBox = document.getElementById("selectBox");
+	 //alert(selectBox);
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+	
+    if(selectedValue=='s_d_sameday_skill' || selectedValue =='s_d_inc_overtime')
+	{
+	
+	document.getElementById("MyControlName").style.display = "none"; 
+	} 
+	else 
+	{
+	 document.getElementById("MyControlName").style.display = "block";  
+	}
+}   
+ 
+		
+ function OnSubmitForm()
+		{ 
+		
+		   var selectBox = document.getElementById("selectBox");
+		   var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+		   
+		     if(selectedValue == 's_d_sameday_skill')
+			  {
+			   document.myform.action ="sameDaySkillAdd.htm";
+			  }
+			  else if(selectedValue == 's_d_inc_overtime')
+			  {
+				document.myform.action ="addingSameDayOT.htm";
+			  }
+	  
+			  else if(selectedValue == 's_d_schedule_change')
+			  { 
+				 var selectBox2 = document.getElementById("s_d_sechedule_action");
+				 var selectedValue2 = selectBox2.options[selectBox2.selectedIndex].value;
+				if (selectedValue2 == 'add_nonprod_time')
+				{
+				  document.myform.action ="addNonProductiveTime.htm";
+				}
+				else if (selectedValue2 == 's_d_on')
+				{
+				  document.myform.action ="techTurnOn.htm";
+				}
+				
+				else if (selectedValue2 == 's_d_off')
+				{
+				  document.myform.action ="techTurnOf.htm";
+				}
+				
+				else if (selectedValue2 == 's_d_tech_profile')
+				{
+				  document.myform.action ="adjustTechProfile.htm";
+				}
+			  
+		     }
+		 }
+	
+</script> 
+</html>

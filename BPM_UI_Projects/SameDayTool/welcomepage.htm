@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>iWMP Tool</title>
+<LINK rel="stylesheet" type="text/css" href="/iWMP/iWMP/css/style.css" >
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+
+<body background="img/images001.jpg">
+<table width="100%">
+<tr><td><!--start Header Part-->
+<div class="headerLayout">
+ <div class="image"> 
+	<img src="img/Header2.png" alt="" height="100%" width="100%"  />
+						  <div class="welcomeText">
+						    <p><strong>Welcome, Guest User<br/>
+							<div id="LoggedAs$ID"></div></strong></p>
+								<p>
+						<strong><a href="under_const.htm"><font color="white">Contact Us</font></a> &nbsp;&nbsp | &nbsp;&nbsp<a href="under_const.htm"><font color="white">Log out</font></a><br/>
+						</strong>
+					</p>
+
+
+<br/>
+							</strong></p>
+						  </div>
+	</div>
+  </div>
+ 
+</div>
+
+	  
+<!--end Header Part--></td></tr>
+<tr><td><!--start Middle Part--> 
+<div class="middleLayout">
+
+<div class="middleLeftLayout">
+<div id="menu8">
+  <ul>
+    <li><a  href="welcomepage.htm" title="Adminstration Portal"><img src="images/icon/home_ico.png" border="0">&nbsp;Home</a></li>
+    <li><a  href="under_const.htm" title="Admin"><img src="images/icon/admin_ico.png"  border="0">&nbsp;Admin</a></li>
+    <li><a  href="under_const.htm" title="Capacity Planning"><img src="images/icon/capacity_planning_ico.png"  border="0">&nbsp;Capacity Planning</a></li>
+    <li><a  href="under_const.htm" title="Tech Maintenance"><img src="images/icon/tech_maintaince_ico.png"  border="0">&nbsp;Tech Maintenance</a></li>
+    <li><a  href="index.htm" title="Same Day Configuration"><img src="images/icon/same_day_ico_over.png"  border="0">&nbsp;Same Day Configuration</a></li>
+	<li><a  href="layoutTest3.htm" title="Allows your schedule changes for Same Day"><img src="images/icon/same_day_ico_over.png"  border="0">&nbsp;Same Day Change Tool</a></li>
+    <li><a  href="under_const.htm" title="Canvas Assign Tool (Overtime & Holiday)"><img src="images/icon/canvas_assign_ico.png"  border="0">&nbsp;Canvas Assign Tool</a></li>
+	
+	<li><a  href="under_const.htm" title="Reorganization"><img src="images/icon/recoganazation_ico.png"  border="0">&nbsp;Reorganization</a></li>
+	<li><a  href="under_const.htm" title="National Loan Tool"><img src="images/icon/national_loan_ico.png"  border="0">&nbsp;National Loan Tool</a></li>
+	<li><a  href="under_const.htm" title="EASE"><img src="images/icon/ease_ico.png"  border="0">&nbsp;EASE</a></li>
+	<li><a  href="under_const.htm" title="iWMP Reporting"><img src="images/icon/iwmp_ico.png"  border="0">&nbsp;iWMP Reporting</a></li>
+	
+	<li><a  href="http://tspace.web.att.com/homepage/web/gettingStarted/" title="tSpace"><img src="images/icon/tspace_ico.png"  border="0">&nbsp;tSpace</a></li>
+	<li><a  href="http://webphone.att.com" title="Web Phone"><img src="images/icon/web_phone_ico.png"  border="0">&nbsp;Web Phone</a></li>
+	<li><a  href="under_const.htm" title="Contact Us"><img src="images/icon/contact.png"  border="0">&nbsp;Contact Us</a></li>
+	<li><a  href="under_const.htm" title="Logout" ><img src="images/icon/logout.jpg"  border="0">&nbsp;Logout</a></li>
+  </ul>
+</div>
+</div>
+
+<div class="middleRightLayout"> 
+<table id=mid align="center" border="0" >
+                  <tr>
+                    <td style="font-size:22px; color:#0D4F8B; font-weight:bolder; " align="center">Welcome to iWMP </td>
+                    <td>&nbsp;</td>
+                    
+                  </tr>
+				  
+				   <tr height="20px">
+                  
+                    <td colspan="2">&nbsp;</td>
+                
+                  </tr>
+                  
+				  
+				 
+				
+				  
+				   <tr>
+                    <td colspan="2" align="right"><div id="requestContainer$ID">
+            <div id="ns_InputRequestRequest_input$ID" class="avc_message_container input ui-widget-content noborder">
+               <form id="InputRequestRequestInputForm$ID" name="InputRequestRequestInputForm$ID" action="">
+                  <table class="input" width="100%"  align="center">
+                     <tbody>
+					 
+					 <tr>
+					 <td colspan="2" align="">
+					 <table align="" >
+					 
+					 <tr>
+					 <td align="left"> <div  style="font-size:150%; color: #B0B0B0; font-weight: bold; font-style:italic;">Countdown to AT&T's all-IP Network</div>	</td>
+					 <td>
+					 <div id="countdown" style="font-size:150%; color: #B0B0B0; font-style: italic; font-weight: bolder;  " align="left"></div>
+					 </td>
+					 <td align="right">
+					 <input type="text" value="" readonly="readonly" id="daysToCountDown"  style="width:140px;font-size:350%;  height:55px;color: #B0B0B0;  text-align:center; border-color: #E05D1B; "></input><br/>
+					 <div align="center"  style="font-size:150%; color: #B0B0B0; font-weight: bold;">Day(s)</div>					 
+					 </td>
+					 <td></td>
+					 <td>
+					 <input type="text" value="" readonly="readonly" id="hoursToCountDown" style="width:90px; font-size:350%;  height:55px;color: #B0B0B0;  text-align:center; border-color: #E05D1B; "></input><br/>
+					 <div align="center" style="font-size:150%; color: #B0B0B0; font-weight: bold;">Hour(s)</div>				 
+					 </td>
+					 <td></td>
+					 <td>
+					 <input type="text" value="" readonly="readonly" id="minutesToCountDown"style="width:90px; font-size:350%;  height:55px;color: #B0B0B0;  text-align:center; border-color: #E05D1B; "></input><br/>
+					 <div align="center" style="font-size:150%; color: #B0B0B0; font-weight: bold;">Minute(s)</div>					 
+					 </td>
+					 <td></td> 
+					 <td>
+					 <input type="text" value="" readonly="readonly" id="secondsToCountDown"style="width:90px; font-size:350%;   height:55px;color: #B0B0B0;  text-align:center; border-color: #E05D1B; "></input><br/>
+					 <div align="center" style="font-size:150%; color: #B0B0B0; font-weight: bold;">Second(s)</div>	 
+					 </td>
+					 <td></td>
+					 <td></td>
+					 </tr>
+					 </table>
+					 </td>
+					 </tr>					 
+                       
+                     </tbody>
+                  </table>
+               </form> 
+            </div>
+         </div></td>
+                   
+                  </tr>
+				  <tr height="50px">
+                  
+                    <td colspan="2">&nbsp;</td>
+                
+                  </tr>
+				   <tr>
+                    <td><img src="images/welcome_page/head_FrontDoor.jpg"></td>
+                    <td><img src="images/welcome_page/att_help_icon_org_4cp.png"></td>
+                  </tr>
+				  
+				  <tr>
+                    <td style="color:#236B8E; font-weight:bolder; ">Submit requests for new applications or enhancements <a href="#" style="text-decoration:underline; ">here</a></td>
+                    <td><a href="#" style="text-decoration:underline; font-weight:bold; ">Feedback</a></td>
+                  </tr>
+			
+			  </td>
+			  </tr>
+</table>
+</div>
+
+<!--end Middle Part--></td></tr>
+<tr><td><!--start Footer Part-->
+<div class="footerLayout">
+   <table id=footer align="center" border="0" width="100%">
+                  <tr>
+                    <td align="center">AT&T Proprietary (Internal Use Only)</td>
+                  </tr>
+                  <tr>
+                    <td align="center">Not for use or disclosure outside the AT&T companies except under written agreement.</td>
+                  </tr>
+                  <tr><td>
+				    <table border="0" cellpadding="0" cellspacing="0">
+					<tr id="attLinks">                   
+					<td nowrap='nowrap'  style="padding:5px; " align='left'><a href='/activevos-central/avc/formviewer/project:/SDAFReports/form/request/HomePage.html' >Home</a>&nbsp;|&nbsp;<a href='http://ebiz.sbc.com/hronestop/index.cfm?fuseaction=Display&amp;type=VoicePHONE' >WebPHONE</a>&nbsp;|&nbsp;<a href='http://insider.web.att.com' >AT&amp;T Insider</a>&nbsp;|&nbsp;<a href='https://intra.att.com/phonehome/updphone/update_logon.cfm' >PMAT</a></td>
+					<td nowrap='nowrap'  width='100%'><table cellspacving='0' border='0' cellpadding='0' width='100%'><tbody><tr><td nowrap='nowrap'  class='header_05' align='right'>&nbsp;©2007-2013 AT&T Intellectual Property. All Rights Reserved.</td></tr></tbody></table></td>
+                  </tr>
+					</table>
+				  </td></tr>
+  </table>
+  
+</div>
+<!--end Footer Part--></td></tr>
+</table>
+<script type="text/javascript">
+//<![CDATA[
+   // request form to submit requests and handle response 
+   // The ready event is invoked once the page is loaded and ready for processing 
+   $(document).ready(function() {
+   // Start of Comment for Removing Overlay Part on 23-07-2014
+   //   	$("#countdown").html("Countdown to AT&T's all-IP Network; &nbsp;")
+		var BigDay = new Date("31 Dec 2019, 00:00:00");
+    var msPerDay = 24 * 60 * 60 * 1000;
+
+	window.setInterval(function(){
+        var today = new Date();
+        var timeLeft = (BigDay.getTime() - today.getTime());
+
+        var e_daysLeft = timeLeft / msPerDay;
+        var daysLeft = Math.floor(e_daysLeft);
+
+        var e_hrsLeft = (e_daysLeft - daysLeft)*24;
+        var hrsLeft = Math.floor(e_hrsLeft);
+
+        var e_minsLeft = (e_hrsLeft - hrsLeft)*60;
+        var minsLeft = Math.floor(e_minsLeft);
+
+        var e_secsLeft = (e_minsLeft - minsLeft)*60;
+        var secsLeft = Math.floor(e_secsLeft);
+		$("#secondsToCountDown").val(secsLeft)
+		$("#minutesToCountDown").val(minsLeft)
+		$("#hoursToCountDown").val(hrsLeft)
+		$("#daysToCountDown").val(daysLeft)
+
+//        var timeString = "<div class='leadText'>Countdown to AT&T's all-IP Network</div><div class='timeValue' style='width:95px;'>" + daysLeft + "</div><span class='timePeriod'> day(s) </span><div class='timeValue'>" + hrsLeft + "</div><span class='timePeriod'> hour(s) </span><div class='timeValue'>" + minsLeft + "</div><span class='timePeriod'> minute(s) </span><div class='timeValue'>" + secsLeft + "</div><span class='timePeriod'> second(s)</span>";
+
+      // var timeString = "<div id='leadText'>Countdown to AT&amp;T's all-IP Network:&nbsp;</div><div id='time'><div id='timeValue' style='width:85px;'>" + daysLeft + "</div><div id='timePeriod'>Day(s)</div></div><div id='time'><div id='timeValue'>" + hrsLeft + "</div><div id='timePeriod'>Hour(s)</div></div><div id='time'><div id='timeValue'>" + minsLeft + "</div><div id='timePeriod'>Minute(s)</div></div><div id='time'><div id='timeValue'>" + secsLeft + "</div><div id='timePeriod'>Second(s)</div></div>";
+       // $('#countdown').html(timeString);
+    },1000);
+	});
+//]]>
+</script>
+</body>
+<script language="JavaScript">
+function AdjustIframeHeightOnLoad() 
+{ 
+//alert('1');
+document.getElementById("iframeLoader").style.height = document.getElementById("iframeLoader").contentWindow.document.body.scrollHeight + "px"; 
+}
+function AdjustIframeHeight(i)
+{ 
+//alert('2');
+document.getElementById("iframeLoader").style.height = parseInt(i) + "px";
+ }
+</script>
+
+</html>
